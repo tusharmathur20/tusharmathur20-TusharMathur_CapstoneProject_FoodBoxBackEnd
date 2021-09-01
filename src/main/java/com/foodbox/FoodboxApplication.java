@@ -48,28 +48,32 @@ public class FoodboxApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		System.out.println("Code Started");
 	
-//		
-//		User user = new User();
-//		user.setFirstName("Admin");
-//		user.setLastName("admin	");
-//		user.setUsername("Admin11");
-//		user.setPassword(this.bCryptPasswordEncoder.encode("admin"));
-//		user.setEmail("admin@gmail.com");
-//	
-//		
-//		Role role1=new Role();
-//		role1.setRoleId(44L);
-//		role1.setRoleName("ADMIN");
-//		
-//		Set<UserRole> userRoleSet=new HashSet<>();
-//		UserRole userRole = new UserRole();
-//		userRole.setRole(role1);
-//		userRole.setUser(user);
-//		
-//		userRoleSet.add(userRole);
-//		
-//		User createUser = this.userService.createUser(user, userRoleSet);
-//		System.out.println(createUser.getUsername());
+//
+		try {
+			User user = new User();
+			user.setFirstName("Admin");
+			user.setLastName("admin	");
+			user.setUsername("Admin11");
+			user.setPassword(this.bCryptPasswordEncoder.encode("admin"));
+			user.setEmail("admin@gmail.com");
+
+
+			Role role1 = new Role();
+			role1.setRoleId(44L);
+			role1.setRoleName("ADMIN");
+
+			Set<UserRole> userRoleSet = new HashSet<>();
+			UserRole userRole = new UserRole();
+			userRole.setRole(role1);
+			userRole.setUser(user);
+
+			userRoleSet.add(userRole);
+
+			User createUser = this.userService.createUser(user, userRoleSet);
+			System.out.println(createUser.getUsername());
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 
 	}
 

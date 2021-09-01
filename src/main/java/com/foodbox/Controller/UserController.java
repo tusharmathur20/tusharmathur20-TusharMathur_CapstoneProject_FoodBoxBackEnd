@@ -25,6 +25,12 @@ import com.foodbox.entity.UserRole;
 @CrossOrigin("*")
 public class UserController {
 
+	
+	@GetMapping("/test")
+	public String test() {
+		return "Welcome to backend api of foodbox";
+	}
+	
 	@Autowired
 private UserService uService;	
 	
